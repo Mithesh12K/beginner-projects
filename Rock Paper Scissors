@@ -1,0 +1,43 @@
+import random
+
+def continue_option():
+  while True:
+    continue_option = input("Continue? (y/n): ")
+    if continue_option == "y":
+      return True
+    elif continue_option == "n":
+      print("Thanks for playing!")
+      return False
+    else:
+      print("Invalid input, try again")
+
+options = ["rock", "paper", "scissors"]
+
+short_to_full = {"r": "rock", "p": "paper", "s": "scissors"}
+
+while True:
+  choice = input("Rock, Paper, or Scissors? (r/p/s): ").lower()
+  if choice not in short_to_full:
+    print("Invalid input, try again")
+    continue
+  
+  player_choice = short_to_full[choice]
+  computer_choice = random.choice(options)
+  
+  if (computer_choice == "rock" and player_choice == "scissors") or (computer_choice == "paper" and player_choice == "rock") or (computer_choice == "scissors" and player_choice == "paper"):
+    print(f"You chose {player_choice}")
+    print(f"Computer chose {computer_choice}")
+    print("You lose")
+    
+  elif (computer_choice == "scissors" and player_choice == "rock") or (computer_choice == "rock" and player_choice == "paper") or (computer_choice == "paper" and player_choice == "scissors"):
+    print(f"You chose {player_choice}")
+    print(f"Computer chose {computer_choice}")
+    print("You won")
+    
+  else:
+    print(f"You chose {player_choice}")
+    print(f"Computer chose {computer_choice}")
+    print("It's a tie")
+    
+  if not continue_option():
+    break
