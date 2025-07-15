@@ -1,0 +1,17 @@
+import random
+
+count = 0
+while True:
+  die1 = random.randint(1, 6)
+  die2 = random.randint(1, 6)
+  command = input("Roll the dice? (y/n): ")
+  if command.lower() == "y":
+    print((die1, die2))
+    count += 1
+  elif command.lower() == "n":
+    print("Thanks for playing!")
+    break
+  else: 
+    print("Invalid Choice")
+
+print(f"You have rolled the dice {count} times")
