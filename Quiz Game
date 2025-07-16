@@ -1,0 +1,33 @@
+questions = [
+    {
+        "question": "What is the capital of France?",
+        "options": ["A. Paris", "B. London", "C. Berlin", "D. Madrid"],
+        "answer": "a"
+    },
+    {
+        "question": "Which language is primarily spoken in Brazil?",
+        "options": ["A. Spanish", "B. Portuguese", "C. English", "D. French"],
+        "answer": "b"
+    },
+    {
+        "question": "What is the smallest prime number?",
+        "options": ["A. 1", "B. 2", "C. 3", "D. 5"],
+        "answer": "b"
+    }
+]
+
+correct = 0
+wrong = 0
+
+for question in questions:
+  print("\n" + question["question"])
+  for options in question["options"]:
+    print(options)
+  answer_input = input("What is your answer? (A/B/C/D)").lower()
+  
+  if answer_input == (question["answer"]):
+    print("Correct!")
+    correct += 1
+  else: 
+    print(f"Wrong! The correct answer was ({question['answer']})")
+    wrong += 1
